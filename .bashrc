@@ -126,8 +126,8 @@ fi
 
 ## Configs for kubernetes
 # Load kubectl completion
-type -P "kubectl" && source <(kubectl completion bash)
-type -P "kubectl" && complete -o default -F __start_kubectl k
+type -P "kubectl" >/dev/null && source <(kubectl completion bash)
+type -P "kubectl" >/dev/null && complete -o default -F __start_kubectl k
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Starship Setup
