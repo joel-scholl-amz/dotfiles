@@ -116,58 +116,43 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Load modularized env vars
+[ -s "$HOME/.env" ] && source "$HOME/.env"
+
+### USER SECTION ###
+
 ## Configs for kubernetes
 # Load kubectl completion
-# source ~/.kubectl-completion.bash
-source ~/.env
+type -P "kubectl" && source <(kubectl completion bash)
+type -P "kubectl" && complete -o default -F __start_kubectl k
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+# Starship Setup
 eval "$(starship init bash)"
+
+# NVIM Setup
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export GPG_TTY=$(tty)
+
+# Forward Proxy Configuration
 
 # export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
 # export https_proxy=http://proxy-eu.bucherhydraulics.com:8080
 # export no_proxy=gitlab.bucherhydraulics.com,s3003013.bucherhydraulics.com,zch551.int.bucherdrives.com,localhost,127.0.0.1
+
 export http_proxy=
 export https_proxy=
 export no_proxy=
-
 
 export HTTP_PROXY=$http_proxy
 export HTTPS_PROXY=$https_proxy
 export NO_PROXY=$no_proxy
 
-# Alias and autocomplete for `k`
-alias devsh='http_proxy=http://proxy-eu.bucherhydraulics.com:8080 https_proxy=http://proxy-eu.bucherhydraulics.com:8080 devbox shell'
-alias k='kubectl'
-
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-type -P "kubectl" && source <(kubectl completion bash)
-type -P "kubectl" && complete -o default -F __start_kubectl k
-
-alias t='task'
-alias tl='task --list-all'
-alias k='kubectl'
-alias fgk='flux get kustomizations'
-alias kga='kubectl get all'
-alias kd='kubectl describe'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
-alias kgpw='kubectl get pods --watch'
-alias kdd='kubectl delete'
-alias kl='kubectl logs'
-alias gll='git log -1 --oneline'
-alias gllf='git log -1 --oneline && flux get kustomizations'
-alias kggs='kubectl config current-context'
-alias kfr='k get all -o name | fzf'
-# alias kprune=""kubectl get rs -A -o wide | tail -n +2 | awk '{if ($3 + $4 + $5 == 0) print "kubectl delete rs -n "$1, $2 }' | sh""
+# Language Setup
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
