@@ -68,12 +68,23 @@ style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
 [kubernetes]
-  disabled = false
-  symbol = "⎈"
-  style = "bg:#394260"
-  format = '[[ $symbol $context( \($namespace\)) ](fg:#769ff0 bg:#394260)]($style)'
-  detect_folders = [".devbox", "clusters"]
-  detect_files = ["k8s", "kubernetes", "helmfile.yaml", "Chart.yaml"]
+disabled = false
+symbol = "⎈"
+#  style = "bg:#394260"
+format = '[[ $symbol $context( \($namespace\)) ](fg:#769ff0 bg:#212736)]($style)'
+detect_folders = [".devbox", "clusters"]
+detect_files = ["k8s", "kubernetes", "helmfile.yaml", "Chart.yaml"]
+
+[[kubernetes.contexts]]
+context_pattern = "*stag*"
+symbol = "💚 "
+context_alias = "stag"
+
+[[kubernetes.contexts]]
+context_pattern = "*prod*"
+style = "red"
+symbol = "💔 "
+context_alias = "prod"
 
 [nodejs]
 symbol = ""
