@@ -1,0 +1,46 @@
+# A sample starship prompt configuration file,
+# to be placed in ~/.config/starship.toml
+# Ref: https://starship.rs/config/
+# Some of the Emojis used below as symbols, are ttaken from https://emojipedia.org/apple/
+
+add_newline = false
+format = """\
+    $directory\
+    $kubernetes\
+    $helm\
+    $env_var\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $line_break\
+    $character"""
+
+# [directory]
+# style = "green"
+# truncation_length = 8
+# [directory.substitutions]
+# "~" = "home"
+
+[kubernetes]
+symbol = "⎈ "
+format = " [$symbol$context( \\($namespace\\))]($style) "
+style = "bright-blue"
+detect_folders = [".devbox", "clusters"]
+disabled = false
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+disabled = false
+
+[git_status]
+modified = "±"
+style = "yellow"
+disabled = false
+[line_break]
+
+[helm]
+format = "[$symbol $version](bold white) "
+symbol="⛵"
+disabled = false
+detect_folders = [".devbox", "clusters"]

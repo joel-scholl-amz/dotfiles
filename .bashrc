@@ -132,6 +132,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Starship Setup
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 
 # NVIM Setup
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
@@ -139,13 +140,13 @@ export GPG_TTY=$(tty)
 
 # Forward Proxy Configuration
 
-# export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
-# export https_proxy=http://proxy-eu.bucherhydraulics.com:8080
-# export no_proxy=gitlab.bucherhydraulics.com,s3003013.bucherhydraulics.com,zch551.int.bucherdrives.com,localhost,127.0.0.1
+export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
+export https_proxy=http://proxy-eu.bucherhydraulics.com:8080
+export no_proxy=gitlab.bucherhydraulics.com,s3003013.bucherhydraulics.com,zch551.int.bucherdrives.com,localhost,127.0.0.1
 
-export http_proxy=
-export https_proxy=
-export no_proxy=
+# export http_proxy=
+# export https_proxy=
+# export no_proxy=
 
 export HTTP_PROXY=$http_proxy
 export HTTPS_PROXY=$https_proxy
@@ -156,3 +157,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# WSL2 browser support
+# export BROWSER="/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
