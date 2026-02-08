@@ -5,3 +5,5 @@
 	tool = nvimdiff
 [merge]
 	tool = nvimdiff
+[credential]
+	helper = store
