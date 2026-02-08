@@ -3,6 +3,7 @@
 format = """
 [░▒▓](#a3aed2)\
 $os\
+$nix_shell\
 [](bg:#769ff0 fg:#a3aed2)\
 $directory\
 [](fg:#769ff0 bg:#394260)\
@@ -46,6 +47,12 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+[nix_shell]
+disabled = false
+symbol = " "
+style = "bg:#a3aed2 fg:#090c0c"
+format = "[ $symbol ]($style)"
+
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"
 format = "[ $path ]($style)"
@@ -76,14 +83,13 @@ detect_folders = [".devbox", "clusters"]
 detect_files = ["k8s", "kubernetes", "helmfile.yaml", "Chart.yaml"]
 
 [[kubernetes.contexts]]
-context_pattern = "*stag*"
-symbol = "💚 "
+context_pattern = ".*stag.*"
+symbol = "💚"
 context_alias = "stag"
 
 [[kubernetes.contexts]]
-context_pattern = "*prod*"
-style = "red"
-symbol = "💔 "
+context_pattern = ".*prod.*"
+symbol = "💥"
 context_alias = "prod"
 
 [nodejs]
