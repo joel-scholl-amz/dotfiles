@@ -160,3 +160,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # WSL2 browser support
 # export BROWSER="/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+. "$HOME/.cargo/env"
