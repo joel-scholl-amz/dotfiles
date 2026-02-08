@@ -1,6 +1,9 @@
 # OS
 # alias z='zoxide'
 
+# Tmux
+alias tma='tmux attach-session -t'
+
 # Task
 alias t='task'
 alias tl='task --list-all'
