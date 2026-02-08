@@ -1,0 +1,7 @@
+[user]
+	email = joel@scholls.ch
+	name = Joel Scholl
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff

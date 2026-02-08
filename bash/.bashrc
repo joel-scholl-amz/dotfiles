@@ -140,13 +140,13 @@ export GPG_TTY=$(tty)
 
 # Forward Proxy Configuration
 
-export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
-export https_proxy=http://proxy-eu.bucherhydraulics.com:8080
-export no_proxy=gitlab.bucherhydraulics.com,s3003013.bucherhydraulics.com,zch551.int.bucherdrives.com,localhost,127.0.0.1
+# export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
+# export https_proxy=http://proxy-eu.bucherhydraulics.com:8080
+# export no_proxy=gitlab.bucherhydraulics.com,s3003013.bucherhydraulics.com,zch551.int.bucherdrives.com,localhost,127.0.0.1
 
-# export http_proxy=
-# export https_proxy=
-# export no_proxy=
+export http_proxy=
+export https_proxy=
+export no_proxy=
 
 export HTTP_PROXY=$http_proxy
 export HTTPS_PROXY=$https_proxy

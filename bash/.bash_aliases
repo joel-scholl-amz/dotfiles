@@ -3,6 +3,7 @@
 
 # Tmux
 alias tma='tmux attach-session -t'
+alias tmls='tmux ls'
 
 # Task
 alias t='task'

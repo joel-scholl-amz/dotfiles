@@ -1,7 +1,0 @@
-fish/
-gcloud/
-glab-cli/
-
-# Go Telemetry config
-go/telemetry/
-gopls/prompt/telemetry
