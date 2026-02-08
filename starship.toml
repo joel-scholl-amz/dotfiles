@@ -76,14 +76,13 @@ detect_folders = [".devbox", "clusters"]
 detect_files = ["k8s", "kubernetes", "helmfile.yaml", "Chart.yaml"]
 
 [[kubernetes.contexts]]
-context_pattern = "*stag*"
-symbol = "💚 "
+context_pattern = ".*stag.*"
+symbol = "💚"
 context_alias = "stag"
 
 [[kubernetes.contexts]]
-context_pattern = "*prod*"
-style = "red"
-symbol = "💔 "
+context_pattern = ".*prod.*"
+symbol = "💥"
 context_alias = "prod"
 
 [nodejs]
