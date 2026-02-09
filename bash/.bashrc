@@ -138,6 +138,9 @@ eval "$(zoxide init bash)"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export GPG_TTY=$(tty)
 
+# TMUX Setup
+tmux source-file ~/.config/tmux/tmux.conf
+
 # Forward Proxy Configuration
 
 # export http_proxy=http://proxy-eu.bucherhydraulics.com:8080
