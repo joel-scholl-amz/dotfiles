@@ -30,6 +30,10 @@ stow -D tmux
 ```
 
 > **Note:** If stow reports conflicts, it means a real file already exists at the target location. Back it up or remove it, then re-run `stow`.
+## Software Dependencies
+- zoxide
+- starship
+- rustup
 
 ## Packages
 
