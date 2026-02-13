@@ -6,6 +6,9 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 - `git`
 - `stow` (e.g., `sudo apt install stow` or `nix-env -iA nixpkgs.stow`)
+- `nvim`
+- `starship`
+- `zoxide`
 
 ## Setup
 
