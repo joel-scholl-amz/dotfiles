@@ -1,5 +1,6 @@
 # OS
 # alias z='zoxide'
+alias vim='nvim'
 
 # Tmux
 alias tma='tmux attach-session -t'
