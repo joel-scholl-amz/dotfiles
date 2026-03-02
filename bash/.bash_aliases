@@ -12,6 +12,9 @@ alias tl='task --list-all'
 
 # GitOps
 alias k='kubectl'
+alias kns='kubectl ns'
+alias ktx='kubectl ctx'
+alias ds='devbox shell'
 alias fgk='flux get kustomizations'
 alias kga='kubectl get all'
 alias kd='kubectl describe'
