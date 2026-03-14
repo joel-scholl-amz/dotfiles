@@ -138,6 +138,7 @@ eval "$(zoxide init bash)"
 # NVIM Setup
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export GPG_TTY=$(tty)
+export EDITOR=nvim
 
 # TMUX Setup
 tmux source-file ~/.config/tmux/tmux.conf
