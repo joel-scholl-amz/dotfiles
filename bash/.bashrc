@@ -129,6 +129,7 @@ fi
 type -P "kubectl" >/dev/null && source <(kubectl completion bash)
 type -P "kubectl" >/dev/null && complete -o default -F __start_kubectl k
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.kubectl-plugins:$PATH"
 
 # Starship Setup
 eval "$(starship init bash)"
