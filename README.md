@@ -8,6 +8,7 @@ Install using apt or apt-get:
 - `stow`
 - `tmux`
 - `fzf`
+- `unzip`
 
 Install with curl scripts:
 - `nvim`
@@ -38,7 +39,7 @@ Install with curl scripts:
     ```
 - `yarn` (Install nvm first)
     ```bash
-    npm install -g corepack
+    corepack enable yarn
     ```
 
 ## Setup
