@@ -7,7 +7,8 @@ alias tma='tmux attach-session -t'
 alias tmls='tmux ls'
 
 # Docker
-alias dockerps="docker ps -a --format 'table {{.ID}}\\t{{.Names}}\\t{{.Status}}'"
+alias dps="docker ps -a --format 'table {{.ID}}\\t{{.Names}}\\t{{.Status}}'"
+alias dl='docker logs'
 
 # Task
 alias t='task'
