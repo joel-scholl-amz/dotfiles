@@ -6,6 +6,9 @@ alias vim='nvim'
 alias tma='tmux attach-session -t'
 alias tmls='tmux ls'
 
+# Docker
+alias dockerps="docker ps -a --format 'table {{.ID}}\\t{{.Names}}\\t{{.Status}}'"
+
 # Task
 alias t='task'
 alias tl='task --list-all'
