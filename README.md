@@ -3,17 +3,43 @@
 Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Prerequisites
-
+Install using apt or apt-get:
 - `git`
-- `stow` (e.g., `sudo apt install stow` or `nix-env -iA nixpkgs.stow`)
-- `nvim`
-- `starship`
-- `zoxide`
+- `stow`
 - `tmux`
-- `cargo`
-- `nvm`
-- `npm`
 - `fzf`
+
+Install with curl scripts:
+- `nvim`
+    ```bash
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+    sudo rm -rf /opt/nvim-linux-x86_64
+    sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+    ```
+- `starship`
+    ```bash
+    curl -sS https://starship.rs/install.sh | sh
+    ```
+- `zoxide`
+    ```bash
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+    ```
+- `cargo`
+    ```bash
+    curl https://sh.rustup.rs -sSf | sh
+    ```
+- `nvm`
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+    ```
+- `npm` (Use nvm - Node Version Manager)
+    ```bash
+    nvm install 24
+    ```
+- `yarn` (Install nvm first)
+    ```bash
+    npm install -g corepack
+    ```
 
 ## Setup
 
@@ -36,6 +62,19 @@ To uninstall a package (removes its symlinks):
 ```bash
 stow -D tmux
 ```
+
+To add more packages to your fork:
+```bash
+mkdir -p ~/.dotfiles/<package-name>/<install-location-relative-to-user-home>/<package-contents>
+mv ~/<install-location-relative-to-user-home>/ ~/.dotfiles/<package-name>/<install-location-relative-to-user-home>/
+cd ~/.dotfiles && stow <package-name>
+
+--- Example with Nvim
+mkdir -p ~/.dotfiles/nvim/.config
+mv ~/.config/nvim ~/.dotfiles/nvim/.config/nvim
+cd ~/.dotfiles && stow nvim
+```
+
 
 > **Note:** If stow reports conflicts, it means a real file already exists at the target location. Back it up or remove it, then re-run `stow`.
 ## Software Dependencies
