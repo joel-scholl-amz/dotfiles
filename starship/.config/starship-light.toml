@@ -4,21 +4,21 @@ format = """
 [░▒▓](#7287FD)\
 $os\
 $nix_shell\
-[](bg:#1E66F5 fg:#7287FD)\
+[](bg:#1E66F5 fg:#7287FD)\
 $directory\
-[](fg:#1E66F5 bg:#ACB0BE)\
+[](fg:#1E66F5 bg:#ACB0BE)\
 $git_branch\
 $git_status\
-[](fg:#ACB0BE bg:#CCD0DA)\
+[](fg:#ACB0BE bg:#CCD0DA)\
 $kubernetes\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#CCD0DA bg:#DCE0E8)\
+[](fg:#CCD0DA bg:#DCE0E8)\
 $username\
 $time\
-[ ](fg:#DCE0E8)\
+[ ](fg:#DCE0E8)\
 \n$character"""
 
 [os]
@@ -49,7 +49,7 @@ RedHatEnterprise = "󱄛"
 
 [nix_shell]
 disabled = false
-symbol = " "
+symbol = " "
 style = "bg:#7287FD fg:#1e1e2e"
 format = "[ $symbol ]($style)"
 
@@ -61,12 +61,12 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:#ACB0BE"
 format = '[[ $symbol $branch ](fg:#4C4F69 bg:#ACB0BE)]($style)'
 
@@ -92,22 +92,22 @@ symbol = "💥"
 context_alias = "prod"
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:#CCD0DA"
 format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:#CCD0DA"
 format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:#CCD0DA"
 format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:#CCD0DA"
 format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
 
