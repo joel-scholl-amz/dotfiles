@@ -1,0 +1,124 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#7287FD)\
+$os\
+$nix_shell\
+[](bg:#1E66F5 fg:#7287FD)\
+$directory\
+[](fg:#1E66F5 bg:#ACB0BE)\
+$git_branch\
+$git_status\
+[](fg:#ACB0BE bg:#CCD0DA)\
+$kubernetes\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#CCD0DA bg:#DCE0E8)\
+$username\
+$time\
+[ ](fg:#DCE0E8)\
+\n$character"""
+
+[os]
+disabled = false
+style = "bg:#7287FD fg:#1e1e2e"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[nix_shell]
+disabled = false
+symbol = " "
+style = "bg:#7287FD fg:#1e1e2e"
+format = "[ $symbol ]($style)"
+
+[directory]
+style = "fg:#EFF1F5 bg:#1E66F5"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#ACB0BE"
+format = '[[ $symbol $branch ](fg:#4C4F69 bg:#ACB0BE)]($style)'
+
+[git_status]
+style = "bg:#ACB0BE"
+format = '[[($all_status$ahead_behind )](fg:#4C4F69 bg:#ACB0BE)]($style)'
+
+[kubernetes]
+disabled = false
+symbol = "⎈"
+format = '[[ $symbol $context( \($namespace\)) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
+detect_folders = [".devbox", "clusters"]
+detect_files = ["k8s", "kubernetes", "helmfile.yaml", "Chart.yaml"]
+
+[[kubernetes.contexts]]
+context_pattern = ".*stag.*"
+symbol = "💚"
+context_alias = "stag"
+
+[[kubernetes.contexts]]
+context_pattern = ".*prod.*"
+symbol = "💥"
+context_alias = "prod"
+
+[nodejs]
+symbol = ""
+style = "bg:#CCD0DA"
+format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#CCD0DA"
+format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#CCD0DA"
+format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#CCD0DA"
+format = '[[ $symbol ($version) ](fg:#4C4F69 bg:#CCD0DA)]($style)'
+
+[username]
+show_always = true
+style_user = "bg:#DCE0E8 fg:#6C6F85"
+style_root = "bg:#DCE0E8 fg:#6C6F85"
+format = '[[ $user ](fg:#6C6F85 bg:#DCE0E8)]($style)'
+
+[time]
+disabled = true
+time_format = "%R"
+style = "bg:#DCE0E8"
+format = '[[  $time ](fg:#6C6F85 bg:#DCE0E8)]($style)'
