@@ -140,6 +140,9 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export GPG_TTY=$(tty)
 export EDITOR=nvim
 
+# Set up fzf bash integration if installed
+[ -s /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+
 # TMUX Setup
 tmux source-file ~/.config/tmux/tmux.conf
 
