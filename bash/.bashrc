@@ -139,6 +139,7 @@ eval "$(zoxide init bash)"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export GPG_TTY=$(tty)
 export EDITOR=nvim
+alias vi=nvim
 
 # Set up fzf bash integration if installed
 [ -s /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
