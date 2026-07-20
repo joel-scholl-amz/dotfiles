@@ -27,7 +27,7 @@ style = "bg:#a3aed2 fg:#090c0c"
 format = "[ $symbol ]($style)"
 
 [os.symbols]
-Windows = ""
+Windows = ""
 Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"

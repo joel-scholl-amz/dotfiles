@@ -2,6 +2,9 @@
 
 Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
+> **On Windows?** See [WINDOWS.md](WINDOWS.md) for a Git Bash setup guide
+> (junctions + shim instead of stow — no admin required).
+
 ## Prerequisites
 Install using apt or apt-get:
 - `git`
