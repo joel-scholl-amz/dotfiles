@@ -2,6 +2,14 @@
 # alias z='zoxide'
 alias vim='nvim'
 
+# VS Code (Windows launcher) -> Remote-WSL window.
+# tmux is started by systemd (tmux.service), so panes have no Windows PATH and no
+# WSL_DISTRO_NAME; call the launcher by path and supply the distro name ourselves.
+code() {
+    local bin="/mnt/c/Users/SchollJ/AppData/Local/Programs/Microsoft VS Code/bin/code"
+    WSL_DISTRO_NAME="${WSL_DISTRO_NAME:-Ubuntu}" "$bin" "$@"
+}
+
 # Tmux
 alias tma='tmux attach-session -t'
 alias tmls='tmux ls'
@@ -30,6 +38,7 @@ alias kggs='kubectl config current-context'
 alias kfr='k get all -o name | fzf'
 alias kfpd='k describe $(k get pods -o name | fzf)'
 alias kprune='kubectl get rs -A -o wide | tail -n +2 | awk '"'"'{if ($3 + $4 + $5 == 0) print "kubectl delete rs -n "$1, $2 }'"'"' | sh'
+alias netshoot='k run debug -it --rm --image=nicolaka/netshoot'
 
 # Git Aliases
 alias gs='git status'
