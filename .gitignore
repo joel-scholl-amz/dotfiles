@@ -1,2 +1,3 @@
 tmux/.config/tmux/plugins/
 git/.gitconfig
+neomutt/.config/neomutt/account.muttrc

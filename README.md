@@ -98,6 +98,7 @@ cd ~/.dotfiles && stow nvim
 | `k9s`      | K9s Kubernetes TUI                  |
 | `dlv`      | Delve Go debugger                   |
 | `uv`       | uv Python package manager           |
+| `neomutt`  | NeoMutt mail client (IMAP)          |
 
 ## Neovim (kickstart.nvim)
 

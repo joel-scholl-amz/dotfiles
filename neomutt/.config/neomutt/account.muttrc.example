@@ -1,0 +1,22 @@
+# Copy to account.muttrc (gitignored) and fill in.
+# Password is pulled from `pass`:  pass insert mail/imap
+
+set my_user = "you@example.com"
+set my_host = "mail.example.com"            # IMAP host
+set my_smtp = "smtp.example.com"            # SMTP host
+
+set realname = "Joel Scholl"
+set from = $my_user
+set imap_user = $my_user
+set imap_pass = "`pass show mail/imap | head -n1`"
+
+set folder = "imaps://$my_host:993/"
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+set trash = "+Trash"
+
+# 465 = implicit TLS (smtps://); use smtp://...:587 for STARTTLS
+set smtp_url = "smtps://$my_smtp:465/"
+set smtp_user = $my_user
+set smtp_pass = $imap_pass
