@@ -7,6 +7,14 @@
 # @continuum-boot), it writes a 0-byte file and `last` ends up pointing at it.
 # On next boot @continuum-restore reads the empty `last` and tmux crashes.
 #
+# LIMITATION: this only fires when a tmux server is alive. resurrect resolves
+# hook bodies with `tmux show-option` (helpers.sh execute_hook), so in the
+# shutdown race described above -- where the server is already dead -- the hook
+# name comes back empty and this script never runs. That gap is covered by
+# save-and-verify.sh (systemd ExecStop) and repair-resurrect-last.sh
+# (@resurrect-hook-pre-restore-all) instead. What remains here is the narrower
+# case of a save firing while the server is up but has no panes.
+#
 # This hook runs immediately before the symlink swap and receives the path to
 # the file resurrect just wrote ($1). If that file is empty, we overwrite it
 # with the contents of the current good `last` save. resurrect then sees the two
