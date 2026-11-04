@@ -23,6 +23,7 @@ alias t='task'
 alias tl='task --list-all'
 
 # GitOps
+alias kubectl='kubecolor'
 alias k='kubectl'
 alias kns='kubectl ns'
 alias ktx='kubectl ctx'
@@ -39,6 +40,7 @@ alias kfr='k get all -o name | fzf'
 alias kfpd='k describe $(k get pods -o name | fzf)'
 alias kprune='kubectl get rs -A -o wide | tail -n +2 | awk '"'"'{if ($3 + $4 + $5 == 0) print "kubectl delete rs -n "$1, $2 }'"'"' | sh'
 alias netshoot='k run debug -it --rm --image=nicolaka/netshoot'
+alias sqltools='k run debug -it --rm --image=harbor.bucherhydraulics.com/proxy-microsoft/mssql-tools@sha256:62556500522072535cb3df2bb5965333dded9be47000473e9e0f84118e248642'
 
 # Git Aliases
 alias gs='git status'

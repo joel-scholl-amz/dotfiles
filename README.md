@@ -28,6 +28,11 @@ Install with curl scripts:
     ```bash
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
     ```
+- `direnv`
+    ```bash
+    sudo apt install direnv
+    # or: curl -sfL https://direnv.net/install.sh | bash
+    ```
 - `cargo`
     ```bash
     curl https://sh.rustup.rs -sSf | sh
@@ -84,6 +89,7 @@ cd ~/.dotfiles && stow nvim
 ## Software Dependencies
 - zoxide
 - starship
+- direnv
 - rustup
 
 ## Packages

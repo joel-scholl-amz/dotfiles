@@ -130,10 +130,14 @@ type -P "kubectl" >/dev/null && source <(kubectl completion bash)
 type -P "kubectl" >/dev/null && complete -o default -F __start_kubectl k
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.kubectl-plugins:$PATH"
+export PATH="$ORACLE_HOME:$PATH"
 
 # Starship Setup
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+# direnv Setup
+type -P direnv >/dev/null && eval "$(direnv hook bash)"
 
 # NVIM Setup
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
